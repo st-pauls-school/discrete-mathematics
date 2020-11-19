@@ -1,0 +1,90 @@
+\section{Planar Graphs}
+\label{title}
+
+\subsection{Bipartite Graphs}
+\label{Bipartite}
+
+\subsection{Hamiltonian Cycles}
+\label{ham-cycles}
+
+\subsection{Planar Graphs}
+\label{planar}
+
+Euler’s Relationship for any connected planar graph 
+
+\[
+n - m + r = 2 
+\]
+(Th10.2, p190)
+
+If $G$ is planar then order, i.e. number of vertices, $n \ge 3$, size $m$, then $m \le 3n - 6$
+
+The boundary of every region must have at least 3 edges.
+
+This is obvious for $n = 3$, so $n \ge 4$ and $m \ge 3$. 
+Suppose $G$ is planar and has $r$ regions. 
+
+\[ n - m + r = 2 \]   
+
+Let’s sum up all the arcs touching all the regions, $N$
+
+\[ 3r \le N \]
+
+Each arc can only touch two regions 
+
+
+
+\begin{align}
+N &\le 2r \\ 
+2 &= n - m + r \\
+6 &= 3n -3m + 3r
+\end{align}
+but 
+\[
+3r \le 2m 
+\]
+So 
+\begin{align}
+6 &\le 3n - 3m + 2m \\
+6 &<= 3n -m \\
+m &<= 3n - 6 \\ 
+\end{align}
+
+We can go on to say if $G$ is a graph of order at least 3 and size $m$, $m > 3n - 6$, $G$ is nonplanar. For $K_5$  that works. 
+
+$K_{3,3}$ it doesn’t. 
+
+Proof that $K_{3,3}$ is not planar: 
+
+Using Euler
+$A = 9$, $N=6$, so $R$ must be 5.  
+
+Pick a region, its boundary must be a cycle and (it is bipartite) it must be an even cycle, at least 4, perhaps 6.
+
+$5$ regions, $5*4$ arcs, each arc separates 2 regions so $(5*4/2) = 10$ arcs required \ldots but we only have 9. 
+
+Contradiction 
+
+\subsection{Ore's Theorem}
+
+Let $G$ be a (finite and simple) graph with $n \ge 3$ vertices. We denote by $deg_v$ the degree of a vertex $v$ in $G$, i.e. the number of incident edges in $G$ to $v$. Then, Ore's theorem states that if
+
+$deg_v + deg_w \ge n$ for every pair of distinct non-adjacent vertices $v$ and $w$ of $G$
+ 
+then $G$ is Hamiltonian.
+
+\subsubsection{Proof}
+
+It is equivalent to show that every non-Hamiltonian graph G does not obey the condition.
+ 
+ Accordingly, let $G$ be a graph on $n \ge 3$ vertices that is not Hamiltonian, and let $H$ be formed from $G$ by adding edges one at a time that do not create a Hamiltonian cycle, until no more edges can be added. 
+
+ Let $x$ and $y$ be any two non-adjacent vertices in $H$. Then adding edge $xy$ to $H$ would create at least one new Hamiltonian cycle, and the edges other than $xy$ in such a cycle must form a Hamiltonian path $v_1 v_2 ... v_n$ in $H$ with $x = v_1$ and $y = v_n$. 
+
+ For each index $i$ in the range $2 \le i \le n$, consider the two possible edges in $H$ from $v_1$ to $v_i$ and from $v_{i-1}$ to $v_n$. At most one of these two edges can be present in $H$, for otherwise the cycle $v_1 v_2 ... v_{i-1} v_n v_{n-1} ... v_i$ would be a Hamiltonian cycle.
+
+ Thus, the total number of edges incident to either $v_1$ or $v_n$ is at most equal to the number of choices of $i$, which is $n-1$. Therefore, $H$ does not obey the property, which requires that this total number of edges $(deg_{v_1} + deg_{v_n})$ be greater than or equal to $n$. 
+
+ Since the vertex degrees in $G$ are at most equal to the degrees in $H$, it follows that $G$ also does not obey the property.
+
+\footnote{Based on the proof outlined in \url{https://en.wikipedia.org/wiki/Ore\%27s_theorem}.}

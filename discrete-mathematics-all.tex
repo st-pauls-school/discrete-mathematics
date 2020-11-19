@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper]{article}
+\input{discrete-settings}
+
+\title{Discrete Mathematics}
+\author{Chris Harrison}
+\date{\today}
+
+\externaldocument[I-]{dm1-preliminaries-content}
+\externaldocument[II-]{dm2-graph-intro-content}
+\externaldocument[III-]{dm3-trees-content}
+\externaldocument[IV-]{dm4-planar-content}
+
+
+\begin{document}
+
+\maketitle 
+
+\begin{abstract}
+This is an abstract. 
+\end{abstract}
+
+\section*{Introduction}
+
+In this course we will start with some preliminaries (lesson \ref{I-title}), including sets (s. \ref{sets}) and the pigeonholeprinciple (s. \ref{pigeonhole-principle}), before moving on to an introduction to graphs (lesson \ref{II-title}), trees (lesson \ref{III-title}) and planar graphs (lesson \ref{IV-title}).
+
+
+\include{dm1-preliminaries-content}
+\include{dm2-graph-intro-content}
+\include{dm3-trees-content}
+\include{dm4-planar-content}
+\include{dm5-algorithms-content}
+
+\end{document}
