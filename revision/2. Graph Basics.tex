@@ -1,0 +1,76 @@
+
+\documentclass[a4paper,10pt]{exam}
+\usepackage[inline]{enumitem} % for the inline enumerate list 
+\usepackage{amsmath,amsfonts}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{gensymb} % for the degree symbol
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{array} % for the < cmd and the fixed width tabular 
+
+\def\papertitle{Preliminaries}
+\def\attribution{\texttt{cah@stpaulsschool.org.uk} \\ SPS Maths} 
+
+\title{\papertitle}
+
+\date{February}
+
+\printanswers
+
+\begin{document}
+
+
+\maketitle
+
+
+
+\begin{questions} 
+	\question If $G$ is a simple graph with $n$ vertices, what is the maximum number of edges that $G$ can have?
+    \begin{solution}
+        The maximum number of edges that a simple graph with $n$ vertices can have is $\frac{n(n-1)}{2}$.
+    \end{solution}
+    \question If $G$ is a simple graph with $n$ vertices, what is the minimum number of edges that $G$ can have?
+    \begin{solution}
+        The minimum number of edges that a simple graph with $n$ vertices can have is 0.
+    \end{solution}
+    \question Prove that for any graph $G$ of order at least 2, the degree sequence has at least two equal entries.
+    \begin{solution}
+        The degree sequence of a graph is the list of the degrees of the vertices in the graph. The degree of a vertex is the number of edges incident to it. 
+        \begin{parts}
+            \part The degree of a vertex is a non-negative integer. 
+            \part The degree sequence of a graph is a list of non-negative integers. 
+            \part If a graph has at least two vertices, then the degree sequence has at least two equal entries: pigeonhole principle.
+        \end{parts}
+    \end{solution}
+    \question Prove that every connected graph contains at least one spanning tree. 
+    \begin{solution}
+        A connected graph is a graph in which there is a path between every pair of vertices. A spanning tree of a graph is a subgraph that is a tree and connects all the vertices together. 
+        \begin{parts}
+            \part A graph with $n$ vertices and $n-1$ edges is a tree. 
+            \part A connected graph with $n$ vertices and $n-1$ edges is a tree. 
+            \part A connected graph with $n$ vertices and $n-1$ edges contains a spanning tree. 
+        \end{parts}
+    \end{solution}
+    \question Give the adjacency matrix for $K_n$. 
+    \begin{solution}
+        The adjacency matrix for $K_n$ is the $n \times n$ matrix with all entries equal to 1, except for the diagonal entries which are all 0.
+    \end{solution}
+    \question Give the adjacency matrix for $P_n$ (reminder: $P_n$ is the simple chain, path, of $n$ vertices.).
+    \begin{solution}
+        The adjacency matrix for $P_n$ is the $n \times n$ matrix with 1s on the diagonal and 1s on the off-diagonal entries that are adjacent.
+    \end{solution}
+    \question Give the adjacency matrix for $C_n$ (reminder: $C_n$ is the simple cycle, or ring, of $n$ vertices).
+    \begin{solution}
+        The adjacency matrix for $C_n$ is the $n \times n$ matrix with 1s on the diagonal and 1s on the off-diagonal entries that are adjacent. The entry in the top right corner is a 1.
+    \end{solution}
+    \question Give the adjacency matrix for $K_{m,n}$.
+    \begin{solution}
+        The adjacency matrix for $K_{m,n}$ is the $(m+n) \times (m+n)$ matrix with the first $m$ rows and columns corresponding to the vertices in the first part of the bipartite graph and the last $n$ rows and columns corresponding to the vertices in the second part of the bipartite graph. The entries are 1 if the vertices are adjacent and 0 otherwise.
+    \end{solution}
+
+\end{questions}
+
+\subsection*{Further reading}
+
+\end{document}

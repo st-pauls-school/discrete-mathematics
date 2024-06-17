@@ -1,0 +1,91 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{commath}
+\usepackage{enumitem}
+
+% \input{pagesettings}
+
+% If using on writelatex, you also need to set the document title in the document settings (the cog button) because
+% they use the \title contents not the actual document title 
+\def\papertitle{Graph Questions}
+\def\attribution{SPS Maths Dept.} 
+
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}%
+\newcommand{\cut}[1]{}
+\newcommand{\ans}[1]{\\ \hspace*{\fill}\framebox {#1} }
+\newcommand{\cosec}{\operatorname{cosec}}
+
+% \renewcommand{\ans}[1]{} 
+%Uncomment the line above to remove answers.
+
+\title{\papertitle}
+
+\date{\today}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{\papertitle}
+\fancyhead[L]{\attribution}
+
+%\fancyhead[R]{\raisebox{-0.8cm}{ \includegraphics[height=2cm]{SPSLogo.jpg}}}
+%Uncomment the line above to include the school logo top right.
+
+\maketitle
+
+
+
+\begin{enumerate}
+	\item If a graph has $n$ vertices, how many edges can it have at most? How many at least?
+	\item If a graph has $n$ vertices, how many edges must it have if it is connected?
+	\item If a graph has $n$ vertices, how many edges must it have if it is complete?
+	\item If a graph has 9 vertices, 4 of degree 3, 2 of degree 5, 2 of degree 6 and 1 of degree 8, how many edges does it have? Draw it. Is it planar? 
+	\item A chess tournament is held in which every player plays every other player exactly once. There are no draws. How many players are there if there are 36 games in total? How many games are there is there are 25 players? 
+\end{enumerate}
+
+A tree is a graph with no cycles. A cycle is a path that starts and ends at the same vertex. 
+
+\begin{enumerate}[resume]
+	\item If a graph has $n$ vertices, how many edges must it have if it is a tree?
+	\item if it is a tree with $k$ vertices of degree 1?
+	\item if it is a tree with $k$ vertices of degree 2?
+\end{enumerate}
+
+A graph is bipartite if its vertices can be divided into two sets such that no two vertices in the same set are joined by an edge. 
+We say that a graph is $k$-partite if its vertices can be divided into $k$ sets such that no two vertices in the same set are joined by an edge.
+
+\begin{enumerate}[resume]
+	\item How many edges can a bipartite graph with $n$ vertices have at most? How many at least?
+	\item Prove that cycles in a bipartite graph must have even length.
+\end{enumerate}
+
+We saw the $K_{3,3}$ graph in the lesson. It is bipartite and has 6 vertices and 9 edges. It is not planar. We used the utility graph as an example, we can call this $UG$. 
+
+\begin{enumerate}[resume]
+	\item $UG$ has 6 vertices and every vertex has degree 3. prove that there are however no graphs with 7 vertices in which every vertex has degree 3.
+\end{enumerate}
+
+A graph $H$ is a \textit{subgraph} of a graph $G$ if the vertices of $H$ are a subset of the vertices of $G$ and the edges of $H$ are a subset of the edges of $G$.
+
+Two graphs are said to be isomorphic when they have the same number of vertices and the same number of edges and there is a one-to-one correspondence between the vertices of the two graphs such that two vertices are joined by an edge in one graph if and only if the corresponding vertices are joined by an edge in the other graph.
+
+Alternatively, we might say that two (labelled) graphs are isomorphic if their labels can be relabelled so that they are identical. 
+
+\begin{enumerate}[resume]
+	\item $K_3$ (with its vertices labelled $a$, $b$ and $c$) has how many unequal subgraphs? Draw them. 
+	\item The numnber of \emph{nonisomorphic} subgraphs of $K_3$ is only 7, though. Draw them.
+\end{enumerate}
+
+
+
+
+\end{document}

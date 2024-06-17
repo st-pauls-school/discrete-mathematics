@@ -1,0 +1,95 @@
+
+\documentclass[a4paper,10pt]{exam}
+\usepackage[inline]{enumitem} % for the inline enumerate list 
+\usepackage{amsmath,amsfonts}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{gensymb} % for the degree symbol
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{array} % for the < cmd and the fixed width tabular 
+
+\def\papertitle{Graph Skills}
+\def\attribution{\texttt{cah@stpaulsschool.org.uk} \\ SPS Maths} 
+
+\title{\papertitle}
+
+\date{February}
+
+\printanswers
+
+\begin{document}
+
+\maketitle
+
+Note, this is graph only material - not networks, so this includes Eulerian, Hamiltonian and planar issues, but not Dijkstra, TSP. 
+
+\begin{questions}
+    \question How many arcs in: 
+    \begin{parts}
+        \part $K_6$ 
+        \part $C_7$
+        \part $K_{3,4}$
+        \part $K_n$
+        \part $C_n$
+        \part $K_{m,n}$
+        \part a MST on a graph with $n$ vertices. 
+    \end{parts}
+    \question Draw example graphs that are:
+    \begin{parts}
+        \part simple and connected
+        \part simple but not connected 
+        \part connected but not simple 
+        \part neither simple nor connected 
+    \end{parts}
+    \question True or False: A minimal spanning tree is a trail.
+    \begin{solution}
+        false: Vertices may repeat, arcs cannot, so an MST \emph{might} be a trail, but does not have to be. 
+    \end{solution}
+    \question State Euler's formula in terms of a planar graph. 
+    \question Prove this theorem\footnote{known as The Handshaking Theorem for Planar Graphs}: The sum of all the degrees of the faces/regions of a connected planar graph is equal to twice the number of arcs ($\Sigma degree(f) = 2e$). 
+    \begin{solution}
+        Case one, an arc is on a region that is a cycle: in which case it has an internal and an external face, inside and outside the face. 
+        Case two, it is not on a cycle, in which case it has two exposures to the infinite region. 
+
+        Since each arc borders two different faces or will border an infinite face twice, it must contribute 2 to the sum of the number of degree of the faces. 
+    \end{solution}
+    \question If $G$ is a planar simple graph, prove that $e \le 3v - 6$
+    \begin{solution}
+        By Euler's formula, $v - e + f = 2$, and so $f = e - v + 2$. 
+
+        By the Handshaking Theorem, $\Sigma degree(f) = 2e$, and so $2e = \Sigma degree(f) \ge 3f$. 
+
+        Substituting for $f$, $2e \ge 3(e - v + 2)$, and so $2e \ge 3e - 3v + 6$, and so $e \le 3v - 6$.
+    \end{solution}
+    \question Show that $K_{2,n}$ is planar, for any value of $n$.
+    \begin{solution}
+        $K_{2,n}$ is planar, as it can be drawn with the two vertices of degree 2 on the outside, and the $n$ vertices of degree 1 on the inside.
+    \end{solution}
+    \question State Kuratowksi's Theorem. 
+    \begin{solution}
+        A graph is planar if and only if (iff) it does not contain $K_5$ or $K_{3,3}$ as a subgraph. 
+    \end{solution}
+    \question Use Kuratowksi's theorem to prove that all complete graphs for $K_n$ where $n \ge 5$ are non-planar. 
+    \begin{solution}
+        A complete graph $K_n$ contains $K_5$ as a subgraph, and so is non-planar.
+    \end{solution}
+    \question Prove that a graph is Eulerian if and only if it is connected and every vertex has even degree.
+    \begin{solution}
+        If a graph is Eulerian, then it has an Eulerian circuit, and so every vertex has even degree. 
+
+        If a graph is connected and every vertex has even degree, then it has an Eulerian circuit.
+    \end{solution}
+    \question State Ore's Theorem.
+    \begin{solution}
+        If $G$ is a simple graph with $n \ge 3$ vertices and for every pair of non-adjacent vertices, the sum of their degrees is greater than or equal to $n$, then $G$ is Hamiltonian.
+    \end{solution}
+    \question Prove Ore's Theorem.
+
+        
+
+
+    
+\end{questions}
+
+\end{document}

@@ -1,0 +1,171 @@
+
+\documentclass[a4paper,10pt]{exam}
+\usepackage[inline]{enumitem} % for the inline enumerate list 
+\usepackage{amsmath,amsfonts}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{gensymb} % for the degree symbol
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{array} % for the < cmd and the fixed width tabular 
+
+\def\papertitle{Preliminaries}
+\def\attribution{\texttt{cah@stpaulsschool.org.uk} \\ SPS Maths} 
+
+\title{\papertitle}
+
+\date{February}
+
+\noprintanswers
+
+\begin{document}
+
+
+\maketitle
+
+Prelims, inc sets, pigeonhole principle, arrangement, selection, include-exclude
+
+
+\begin{questions} 
+    \question Sets:  
+    \begin{parts}
+        \part Find the least element of $\{ n \in \mathbb{N} : n^2 - 3 \ge 2\}$
+        \part Find $n| A \cap B|$ 
+        when $A = \{ x \in \mathbb{N} : x \le 20\}$ 
+        and $B = \{ x \in \mathbb{N} : x \text{ is prime} \}$.
+
+        \part How many of the first 100 positive integers are divisible by 2, 3, or 5? 
+        \begin{solution}
+            There are 50 numbers divisible by 2, 33 divisible by 3, and 20 divisible by 5. 
+            There are 16 divisible by 2 and 3, 10 divisible by 2 and 5, and 6 divisible by 3 and 5. 
+            There are 3 divisible by 2, 3, and 5. 
+            So the total is $50 + 33 + 20 - 16 - 10 - 6 + 3 = 74$.
+        \end{solution}
+        \part How many subsets does a set with 10 elements have?
+        \begin{solution}
+            Each element can be in or out of a subset, so there are $2^{10} = 1024$ subsets.
+        \end{solution}
+        \part Consider a universal set \( U \) containing elements that belong to four subsets: \( A \), \( B \), \( C \), and \( D \), with the number of elements in each subset is as follows:
+        \begin{itemize}
+            \item Subset \( A \) contains 20 elements.
+            \item Subset \( B \) contains 30 elements.
+            \item Subset \( C \) contains 25 elements.
+            \item Subset \( D \) contains 15 elements.
+        \end{itemize}
+        
+        Additionally, the intersections of these subsets have the following counts:
+        \begin{itemize}
+            \item  \( A \cap B \) contains 10 elements.
+            \item  \( A \cap C \) contains 8 elements.
+            \item  \( A \cap D \) contains 5 elements.
+            \item  \( B \cap C \) contains 12 elements.
+            \item  \( B \cap D \) contains 7 elements.
+            \item  \( C \cap D \) contains 6 elements.
+            \item  \( A \cap B \cap C \) contains 4 elements.
+            \item  \( A \cap B \cap D \) contains 3 elements.
+            \item  \( A \cap C \cap D \) contains 2 elements.
+            \item  \( B \cap C \cap D \) contains 5 elements.
+        \end{itemize}
+
+        (The assumption can be made that the intersection of all four subset is empty.)
+        
+        How many elements are there in the union of these four subsets, \( A \cup B \cup C \cup D \)? \footnote{This was ChatGPT, can you tell?}
+        \begin{solution}
+            The number of elements in the union of the four subsets is the sum of the number of elements in each subset, minus the sum of the number of elements in each intersection, plus the sum of the number of elements in each intersection of three subsets, minus the number of elements in the intersection of all four subsets. 
+            So the number of elements in the union is \(20 + 30 + 25 + 15 - 10 - 8 - 5 - 12 - 7 - 6 + 4 + 3 + 2 + 5 = 90 - 48 + 14 = 56\).
+        \end{solution}
+    \end{parts}
+    \question Arrangements and selections:
+    \begin{parts}
+        \part How many times does the digit 1 appear in the numbers from 1 to 10000? In how many different numbers? 
+        \begin{solution}
+            The digit 1 appears 1000 times in the thousands place, 1000 times in the hundreds place, 1000 times in the tens place, and 1000 times in the units place, and then in 10000. 
+            
+            So the digit 1 appears 4001 times in total.
+
+            Count the numbers from 1 to 99:
+
+There are 10 numbers with a '1' in the units place (1, 11, 21, ..., 91).
+There are 10 numbers with a '1' in the tens place (10, 11, 12, ..., 19).
+However, we've counted 11 twice (as it has both '1's in the units and tens place), so we subtract 1.
+Total = 10 (units place) + 10 (tens place) - 1 (duplicate) = 19 numbers.
+Count the numbers from 100 to 999:
+
+There are 100 numbers with '1' in the hundreds place (100, 101, 102, ..., 199).
+For each of the other hundreds, we have already counted 19 numbers in step 1.
+Total = 100 + 9 (hundreds) * 19 (numbers per hundred) = 271 numbers.
+
+For eacb thousand, there is 1 number with '1' in the thousands place (1000).
+for each of other thousands, we have already counted 271 numbers in step 2.
+Total = 1000 + 9 (thousands) * 171 (numbers per thousand) = 3439 numbers.
+
+10000 contains a '1' in the ten thousands place.
+
+So, there are 3440 numbers between 1 and 10000 (inclusive) that contain the digit 1.
+
+        \end{solution}
+        \part Some positive integers are chosen, how many must be chosen for at least two of the squares of these integers to have a difference that is a multiple of 10? What about a multiple of 5?
+        \begin{solution}
+            Square numbers end in 0, 1, 4, 5, 6, or 9. So 7 numbers must be chosen for at least two of them to have the same last digit.
+
+            The six number are three pairs of numbers that differ by 5, so 4 numbers must be chosen for at least two of them to differ by 5.
+        \end{solution}
+        \part How many ways are there to arrange the letters of the word `MISSISSIPPI'?
+        \begin{solution}
+            There are 11 letters, with 4 I's, 4 S's, 2 P's, and 1 M. 
+            So the number of arrangements is $\frac{11!}{4!4!2!1!} = 34,650$.
+        \end{solution}
+        \part You're organising a Secret Santa, for this set (of 7 students) who decide to exchange gifts. 
+        However, each person intends to give their gift to someone other than themselves. 
+        How many ways are there for the friends to exchange gifts such that no one receives their own gift?
+        And if I was involved, to make 8? 
+        \begin{solution}
+            \begin{align*}
+            D(7) &= 7! \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \frac{1}{5!} + \frac{1}{6!} - \frac{1}{7!}\right) \\
+            D(7) &= 5040 \left(1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} - \frac{1}{120} + \frac{1}{720} - \frac{1}{5040}\right)\\
+            D(7) &= 5040 \left( \frac{1}{2} - \frac{1}{6} + \frac{1}{24} - \frac{1}{120} + \frac{1}{720} - \frac{1}{5040}\right) \\ 
+            D(7) &= 5040 \times \frac{185}{720} = 1296 \\
+            D(8) &= 40320 \times \frac{7645}{40320} = 7645
+            \end{align*}
+        \end{solution}
+        \part nge) There are 9 points on a circle and lines connect all pairs of points. At how
+        many places inside the circle do these lines intersect?
+        \begin{solution}
+            Each intersection inside is determined by four points on the outside. Each selection of 4 points gives a unique intersection point. Thus, there are a total of C(9, 4) different intersection points.
+        \end{solution}
+    \end{parts}
+    \question Pigeonhole principle:
+    \begin{parts}
+        \part Justify or criticise this statement: ``The Pigeonhole Principle tells us that if we have $n + 1$ pigeons and $n$ holes, since $n + 1 > n$, each box will have at least one pigeon.''
+        \begin{solution}
+            False: One hole could have all $n + 1$ pigeons.
+        \end{solution}
+        \part The Pigeonhole Principle tells us that with $n$ pigeons and $k$ holes each
+        hole can have at most $\lceil n/k \rceil$ pigeons.
+        \begin{solution}
+            False: There exists one box with at least that many, but it could contain more.
+        \end{solution}
+        \part Three people are running for student government. There are 202 people who vote. What
+        is the minimum number of votes needed for someone to win the election?
+        \begin{solution}
+            By pigeonhole, there exists a person who has at least $\lceil 202/3 \rceil = 68$
+votes. So, someone could win with a 67 - 67 - 68 split
+        \end{solution}
+        
+        \part Suppose you have 8 points placed inside a square with sides of length 3 units. 
+        Prove that there must be at least one pair of points that are less than or equal to $\sqrt{2}$ units apart.
+        \begin{solution}
+            The area of the square is 4 square units. 
+            If we divide the square into 9 smaller squares, each with sides of length 1 unit,
+            then by the pigeonhole principle, at least one of these smaller squares must contain two points.
+            The diagonal of each of these smaller squares is $\sqrt{2}$ units, so the distance between the two points in this square is less than or equal to $\sqrt{2}$ units.
+        \end{solution}
+    \end{parts}
+\end{questions}
+
+\subsection*{Further reading}
+
+\url{https://discrete.openmathbooks.org/dmoi3/sec_intro-sets.html}
+
+But not \url{https://www.sanfoundry.com/discrete-mathematics-questions-answers-pigeonhole-principle/}, e.g. q10. 
+\end{document}

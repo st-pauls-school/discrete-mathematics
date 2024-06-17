@@ -1,2 +1,96 @@
 \section{Graphs: An introduction}
 \label{title}
+
+\section{Some Problems}
+
+\begin{itemize}
+	\item Five princes - can we insist that the King’s 5 sons should have a region such that each pair have a common boundary (a point does not count). 
+	\item Three houses, three utilities - can we draw a graph with no edges, crossing. \textit{This is $K_{3,3}$}
+	\item Three friends problem -  certain three mutual friends or three mutual strangers. Looking for a coloured triangle: 
+	\begin{itemize}
+		\item $K_4$ - with coloured internals 
+		\item $K_5$ - with coloured internals 
+		\item $K_6$ - can we draw $K_6$ without?
+		\end{itemize} 
+	Pick a node: Of the 5 arcs leaving, three will have the same colour. 
+	If any one of the edges connecting those vertices is the same, we have a triangle - but ditto if none 
+	
+\end{itemize}
+
+Four colours, 7 bridges, n queens, knight’s tour --- All represented as graph problems 
+
+\section{Some definitions}
+
+A graph $G$ is a finite nonempty set $V$ of vertices, with a set $E$ of 2-elements subsets of $V$, known as edges. These are the vertex set and edge set of $G$. 
+
+The number of vertices is the \textit{order} of $G$. The number of edges is its \textit{size}. (Typically these are denoted $n$ and $m$. )
+
+Two vertices $u$ and $v$ are said to be \textit{adjacent} if there is an edge $uv$, otherwise they are nonadjacent. Similarly adjacent edges share an incident vertex, e.g. $uv$ and $uw$.
+
+A loop is an arc which connects a vertex to itself. An indirect connection is one that involves multiple edges going via intermediate vertices. A \textit{simple} graph has no loops. 
+
+\textit{Unlabelled} graphs - if there is no advantage to labelling the vertices. 
+
+\textit{Nontrivial} graphs have order at least 2. \textit{Nonempty} graphs have size at least 1. 
+
+The number of edges incident with a vertex is said to denote the order of that vertex. An \textit{isolated} vertex has degree 0. Degree 1 is an \textit{end-vertex}. 
+
+\textbf{Theorem} In any graph, the sum of the degrees of the vertices is twice the number of edges. 
+
+$v_1 + v_2 + \ldots + v_n = 2m$ 
+
+$uv$ is the same as $vu$ - so each edge is counted twice. 
+
+How many in a full graph? - assuming no loops 
+
+\textbf{Corollary} Every graph has an even number of odd vertices. 
+
+$2m$ must be even. 
+
+\subsection{Adjacency Matrix}
+
+\subsection{Regular graphs}
+
+A regular graph is one where all local degrees are the same number. 
+
+\begin{itemize}
+	\item A $0-$regular graph is empty of arcs. 
+	\item A $1-$regular is disconnected edges (i.e. that cannot exist). 	
+	\item  A $2-$regular consists of one (or more) disconnected cycles --- more on cycles later. 
+	\item $3-$regulars are called cubic graphs \footnote{e.g. \url{https://mathworld.wolfram.com/CubicGraph.html}} $\dfrac{m}{n} = \dfrac{3}{2}$ is necessary but not sufficient. 
+\end{itemize}
+
+\subsection{irregular Graphs}
+
+An \textit{irregular} graph is one of order at least 2 where every vertex has different degree. 
+
+\textbf{Theorem} irregular graphs cannot exist. 
+
+(Pigeonhole principle)
+
+An \textit{almost irregular} graph has exactly one pair of vertices with the same degree. 
+
+\textit{Complementary} graphs $\overline{G}$ have the same vertex set and where $u$ and $v$ are adjacent in one if they are non-adjacent in the complement. 
+
+Any node in $\overline{G}$ has order (n-1)- the companion node’s order 
+
+degG-bar v  = n - 1 - Gbv
+
+Theorem: for each integer n >=2 there are exactly two almost irregular graphs of order n and they are complements of each other. 
+
+
+\section{AOB}
+
+\begin{itemize}
+	\item Complete - including the number of edges
+	\item digraph
+	\item Adjacency Matrix
+	\item trail --- any collections of connected nodes 
+	\item path --- a trail with no repeating nodes 
+	\item closed trail --- starting and finishing in the same place
+	\item A cycle --- a closed trail where only the initial and final nodes are the same 
+	\item connected graph 
+	\item Eulerian --- a closed trail containing every arc 
+	\item A connected graph is Eulerian iff every node is odd --- Nontrivial \footnote{proof here \url{http://mathonline.wikidot.com/euler-s-theorem}}
+	\item semi-Eulerian --- A connected graph is semi-Eulerian iff precisely two nodes have odd order  
+\end{itemize}
