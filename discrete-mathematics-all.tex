@@ -9,6 +9,8 @@
 \author{Chris Harrison}
 \date{\today}
 
+% From the xr pacakage to precent duplicate references, prepend with the label  https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf#The_\externaldocument_command
+
 \externaldocument[I-]{dm1-preliminaries-content}
 \externaldocument[II-]{dm2-graph-intro-content}
 \externaldocument[III-]{dm3-trees-content}
@@ -33,10 +35,13 @@ trees (lesson \ref{III-title}) and planar graphs (lesson \ref{IV-title}).
 
 \todo{Improve text.}
 
-\include{dm1-preliminaries-content}
-\include{dm2-graph-intro-content}
-\include{dm3-trees-content}
-\include{dm4-planar-content}
-\include{dm5-algorithms-content}
+
+\todo{Rename sections to reflect syllabus areas.}
+
+
+\include{content/preliminaries}
+\include{content/graph-intro}
+\include{content/graph-planar}
+\include{content/algorithms}
 
 \end{document}

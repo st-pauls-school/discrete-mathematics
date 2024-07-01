@@ -1,12 +1,33 @@
 # discrete-mathematics
 
-documentation to support the delivery of OCR further maths (Discrete Mathematics module (Y544))[] (p59--)
+Documentation to support the delivery of OCR further maths (Discrete Mathematics module (Y544))[] (p59--)
 
 - have a single book with chapters
-- have chapter available as standalone
-- need to build the model to allow for that
+- have chapters available as standalone documents 
+- *need to build the model to allow for that*
+- *restructure to reflect the bullet points from the syllabus.*
 
-- restructure to reflect the bullet points from the syllabus.
+## This repo
+
+### all 
+
+The file discrete-mathematics-all brings together all the content files into one single file. 
+
+### settings 
+
+Every tex file includes `discrete-settings.tex` file to attempt to unify all the packages and common instructions. 
+
+### /content
+
+All the ingrediens for the `all` document (also referenced from the /chapters files)
+
+### /worksheets and /revision 
+
+Standalone articles for the question sheets for the SoW and then for revision 
+
+### bib
+
+The `discrete.bib` file contains the bibliography for the `all` file. 
 
 ## Syllabus
 
